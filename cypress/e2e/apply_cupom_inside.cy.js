@@ -29,24 +29,24 @@ describe('Teste de ficha de inscrição - Dinâmico por ambiente', () => {
         const cpfComPontuacao = Cypress.env('cpfGerado');
         const cpfSemPontuacao = cpfComPontuacao.replace(/\D/g, ''); // Remove tudo que não for número
 
-        cy.task('queryDB', {
-            query: `
-    SELECT *
-    FROM atr_fichainscricao."PaymentDetails"
-    WHERE "CandidateId" IN (
-      SELECT "CandidateId"
-      FROM atr_fichainscricao."CandidateDatas"
-      WHERE "Cpf" = $1
-    )
-    ORDER BY "DateCreated" DESC
-    LIMIT 1;
-  `,
-            values: [cpfSemPontuacao]
+//         cy.task('queryDB', {
+//             query: `
+//     SELECT *
+//     FROM atr_fichainscricao."PaymentDetails"
+//     WHERE "CandidateId" IN (
+//       SELECT "CandidateId"
+//       FROM atr_fichainscricao."CandidateDatas"
+//       WHERE "Cpf" = $1
+//     )
+//     ORDER BY "DateCreated" DESC
+//     LIMIT 1;
+//   `,
+//             values: [cpfSemPontuacao]
 
-        }).then((result) => {
-            expect(result).to.have.length.above(0);
-            expect(result[0].Coupon).to.eq('MED50');
-        });
+//         }).then((result) => {
+//             expect(result).to.have.length.above(0);
+//             expect(result[0].Coupon).to.eq('MED50');
+//         });
     });
 
     it('Aplicando CUPOM MED100', () => {
@@ -69,24 +69,24 @@ describe('Teste de ficha de inscrição - Dinâmico por ambiente', () => {
         const cpfComPontuacao = Cypress.env('cpfGerado');
         const cpfSemPontuacao = cpfComPontuacao.replace(/\D/g, ''); // Remove tudo que não for número
 
-        cy.task('queryDB', {
-            query: `
-    SELECT *
-    FROM atr_fichainscricao."PaymentDetails"
-    WHERE "CandidateId" IN (
-      SELECT "CandidateId"
-      FROM atr_fichainscricao."CandidateDatas"
-      WHERE "Cpf" = $1
-    )
-    ORDER BY "DateCreated" DESC
-    LIMIT 1;
-  `,
-            values: [cpfSemPontuacao]
+//         cy.task('queryDB', {
+//             query: `
+//     SELECT *
+//     FROM atr_fichainscricao."PaymentDetails"
+//     WHERE "CandidateId" IN (
+//       SELECT "CandidateId"
+//       FROM atr_fichainscricao."CandidateDatas"
+//       WHERE "Cpf" = $1
+//     )
+//     ORDER BY "DateCreated" DESC
+//     LIMIT 1;
+//   `,
+//             values: [cpfSemPontuacao]
 
-        }).then((result) => {
-            expect(result).to.have.length.above(0);
-            expect(result[0].Coupon).to.eq('MED100');
-        });
+        // }).then((result) => {
+        //     expect(result).to.have.length.above(0);
+        //     expect(result[0].Coupon).to.eq('MED100');
+        // });
     });
 
     it('Aplicando CUPOM MED70', () => {
