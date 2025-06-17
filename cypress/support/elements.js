@@ -86,6 +86,7 @@ exports.elementsFichaDeInscricao = {
   TitleSituacao: ':nth-child(5) > :nth-child(1)',
   InformationSituacao: ':nth-child(5) > :nth-child(2)',
   ButtonRevisarEConcluirInscricao: '.registration-incomplete__button > .btn',
+  ButtonSeguirComUmaNovaInscricao: '.registration-incomplete__action > .btn',
   TitleCodPromotion: '.registration-incomplete__coupon > span',
   InputCupomRecuperacao: '.insp-input__input',
 
