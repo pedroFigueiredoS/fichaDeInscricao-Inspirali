@@ -12,7 +12,7 @@ module.exports = defineConfig({
       prod: "https://fichainscricao.inspirali.com"
     },
     setupNodeEvents(on, config) {
-      const ambiente = process.env.AMBIENTE || "dev";
+      const ambiente = process.env.AMBIENTE || "prod";
       config.baseUrl = config.env[ambiente];
 
      // Conexões do banco por ambiente
