@@ -56,6 +56,11 @@ class InscricaoSelecaoSimplificada {
   }
 
   static personalinformation() {
+
+    cy.get('.registration-identification-modal__button > .btn')
+      .should('be.visible')
+      .click();
+
     cy.get(elementsFichaDeInscricao.TitleCPF)
       .should('be.visible')
       .and('have.text', 'CPF');
@@ -250,13 +255,13 @@ class InscricaoSelecaoSimplificada {
       .should('be.visible')
       .click();
 
-    // cy.get(elementsFichaDeInscricao.TitleOUltimoPeriodoCursadoTransferenciaExterna)
-    //    .should('be.visible')
-    //    .and('have.text', 'O último período cursado');
+     cy.get(elementsFichaDeInscricao.TitleOUltimoPeriodoCursadoTransferenciaExterna)
+        .should('be.visible')
+        .and('have.text', 'O último período cursado');
     
-    // cy.get(elementsFichaDeInscricao.InputOUltimoPeriodoCursadoTransferenciaExterna)
-    //    .should('be.visible')
-    //    .type('5º');
+     cy.get(elementsFichaDeInscricao.InputOUltimoPeriodoCursadoTransferenciaExterna)
+        .should('be.visible')
+        .type('5º');
 
     cy.get(elementsFichaDeInscricao.ButtonAvançarPortadorDeDiploma).click();
   }

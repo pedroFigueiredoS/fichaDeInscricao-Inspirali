@@ -170,52 +170,58 @@ static ReviewAndCompleteApplication() {
     .click();
 }
 
-    static ReviewAndCompleteApplicationNewRegistration() {
-    cy.get(elementsFichaDeInscricao.TitleQueBomTerVoceDeVolta)
-      .invoke('text')
-      .then((text) => {
-        const cleaned = text.replace(/\u00a0/g, ' ').trim();
-        expect(cleaned).to.eq('Que bom te ver de volta!');
-      });
+static ReviewAndCompleteApplicationNewRegistration() {
+  cy.get(elementsFichaDeInscricao.TitleQueBomTerVoceDeVolta)
+    .invoke('text')
+    .then((text) => {
+      const cleaned = text.replace(/\u00a0/g, ' ').trim();
+      expect(cleaned).to.eq('Que bom te ver de volta!');
+    });
 
-    cy.get(elementsFichaDeInscricao.TitleH2RecuperacaoDeInscricao)
-      .scrollIntoView()
-      .should('be.visible')
-      .and('include.text', 'A vida pode ser uma verdadeira montanha-russa e, às vezes, a gente precisa de uma pausa para respirar. Mas olha só, você voltou! E isso é incrível!');
+  cy.get(elementsFichaDeInscricao.TitleH2RecuperacaoDeInscricao)
+    .first()
+    .scrollIntoView()
+    .should('be.visible')
+    .and('include.text', 'A vida pode ser uma verdadeira montanha-russa e, às vezes, a gente precisa de uma pausa para respirar. Mas olha só, você voltou! E isso é incrível!');
 
-    cy.get(elementsFichaDeInscricao.TitleH2RecuperacaoDeInscricaoEsseEOMomento)
-      .scrollIntoView()
-      .should('be.visible')
-      .and('include.text', 'Esse é o momento de focar nos seus sonhos, conclua sua inscrição agora mesmo!');
+  cy.get(elementsFichaDeInscricao.TitleH2RecuperacaoDeInscricaoEsseEOMomento)
+    .first()
+    .scrollIntoView()
+    .should('be.visible')
+    .and('include.text', 'Esse é o momento de focar nos seus sonhos, conclua sua inscrição agora mesmo!');
 
-    cy.get(elementsFichaDeInscricao.TitleComoVoceQuerSeguir)
-      .invoke('text')
-      .then((text) => {
-        const cleaned = text.replace(/\u00a0/g, ' ').trim();
-        expect(cleaned).to.eq('TESTE, como você quer seguir?');
-      });
+  cy.get(elementsFichaDeInscricao.TitleComoVoceQuerSeguir)
+    .invoke('text')
+    .then((text) => {
+      const cleaned = text.replace(/\u00a0/g, ' ').trim();
+      expect(cleaned).to.eq('TESTE, como você quer seguir?');
+    });
 
-    cy.get(elementsFichaDeInscricao.TitleMedicinaCurso)
-      .scrollIntoView()
-      .should('be.visible')
-      .and('include.text', 'Medicina');
+  cy.get(elementsFichaDeInscricao.TitleMedicinaCurso)
+    .first()
+    .scrollIntoView()
+    .should('be.visible')
+    .and('include.text', 'Medicina');
 
-    cy.get(elementsFichaDeInscricao.TitleSituacao)
-      .scrollIntoView()
-      .should('be.visible')
-      .and('include.text', 'Situação');
-    
-    cy.get(elementsFichaDeInscricao.InformationSituacao)
-      .scrollIntoView()
-      .should('be.visible')
-      .and('include.text', 'Incompleta');
+  cy.get(elementsFichaDeInscricao.TitleSituacao)
+    .first()
+    .scrollIntoView()
+    .should('be.visible')
+    .and('include.text', 'Situação');
 
-     cy.get(elementsFichaDeInscricao.ButtonSeguirComUmaNovaInscricao)
-       .scrollIntoView()
-       .should('be.visible')
-       .and('include.text', 'Seguir com uma nova inscrição')
-       .click();
+  cy.get(elementsFichaDeInscricao.InformationSituacao)
+    .first()
+    .scrollIntoView()
+    .should('be.visible')
+    .and('include.text', 'Incompleta');
 
-  }
+  cy.get(elementsFichaDeInscricao.ButtonSeguirComUmaNovaInscricao)
+    .first()
+    .scrollIntoView()
+    .should('be.visible')
+    .and('include.text', 'Seguir com uma nova inscrição')
+    .click();
+}
+
 }
 export default recoveryProcess;
