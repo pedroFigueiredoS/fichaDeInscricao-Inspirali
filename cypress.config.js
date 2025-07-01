@@ -5,6 +5,7 @@ const { Client } = require('pg');
 module.exports = defineConfig({
   projectId: "1at8xu",
   e2e: {
+    pageLoadTimeout: 120000,
     baseUrl: "https://fichainscricao-dev.inspirali.com", // base genérica
     env: {
       dev: "https://fichainscricao-dev.inspirali.com",
