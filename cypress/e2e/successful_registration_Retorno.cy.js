@@ -1,7 +1,7 @@
 import InscricaoRetorno from '../support/pages/ContestRetorno/index.js';
 
 describe('Teste de ficha de inscrição - Dinâmico por ambiente', () => {
-  const concursoId = Cypress.env('concurso') || 16456;
+  const concursoId = Cypress.env('concurso') || 16578;
 
   beforeEach(() => {
     cy.visit(`/concurso/${concursoId}`, {

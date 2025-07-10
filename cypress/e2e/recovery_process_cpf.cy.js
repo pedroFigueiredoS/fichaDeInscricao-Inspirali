@@ -10,7 +10,7 @@ describe('Teste de ficha de inscrição - Dinâmico por ambiente', () => {
     });
   });
 
-  it('Recuperação Ficha Primeira Etapa CPF', () => {
+  it.only('Recuperação Ficha Primeira Etapa CPF', () => {
     InscricaoEnem.completeTheApplicationStarted();
     InscricaoEnem.personalinformation();
     cy.reload();
